@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Quiz</title>
+    <title>My Coding Quiz</title>
 
-    <link rel="stylesheet" href="./Main/assets/css/styles.css"/>
+    <link rel="stylesheet" href="./assets/css/styles.css"/>
   </head>
 
   <body>
+    <div class="top-section">
     <div class="scores"><a href="./Main/highscores.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">0</span></div>
-
+  </div>
     <div class="wrapper">
       <div id="start-screen" class="start">
         <h1>Coding Quiz Challenge</h1>
@@ -22,12 +23,28 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by 15 seconds!
         </p>
+        <div class="line">
+
+        </div>
         <button id="start">Start Quiz</button>
       </div>
 
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
+        <div id="choices" class="choices">
+          <button id="optoin-1"></button>
+          <button id="optoin-2"></button>
+          <button id="optoin-3"></button>
+          <button id="optoin-4"></button>
+        </div>
+        <audio id="myAudioCorrect">
+          <source src="./assets/sfx/correct.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+        <audio id="myAudioIncorrect">
+          <source src="./assets/sfx/incorrect.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
       </div>
 
       <div id="end-screen" class="hide">
@@ -42,7 +59,7 @@
       <div id="feedback" class="feedback hide"></div>
     </div>
 
-    <script src="./Main/assets/js/questions.js"></script>
-    <script src="./Main/assets/js/logic.js"></script>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
   </body>
 </html>
