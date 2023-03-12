@@ -11,7 +11,17 @@
 
   <body>
     <div class="top-section">
-    <div class="scores"><a href="./Main/highscores.html">View Highscores</a></div>
+    <div class="scores">
+      <button id="highscoreButton">Highscores</button>
+    </div>
+    <div id="highscore-screen" class="hide">
+      <div class="highscoreStyle">
+      <h1>Welcome to highScores!</h1>
+      <p>Who holds the highscore!!</p>
+      <h3><span id="initial-display"></span> holds the highscore! With a score of <span id="highscore-display"></span></h3>
+    </div>
+    <button onClick="window.location.reload();">Start Again!</button>
+  </div>
 
     <div class="timer">Time: <span id="time">0</span></div>
   </div>
@@ -48,7 +58,7 @@
       </div>
 
       <div id="end-screen" class="hide">
-        <h2>All done!</h2>
+        <h2>Congradulations your finished the quiz!</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
         <p>
           Enter initials: <input type="text" id="initials" max="3" />

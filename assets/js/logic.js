@@ -11,10 +11,15 @@ var option1 = document.getElementById('optoin-1');
 var option2 = document.getElementById('optoin-2');
 var option3 = document.getElementById('optoin-3');
 var option4 = document.getElementById('optoin-4');
+var highscoreBtn = document.getElementById('highscoreButton');
+var highscoreScreen = document.getElementById('highscore-screen');
+var initualsStore = document.getElementById('initials');
+var submitButton = document.getElementById('submit');
 var questionCounter = 0;
 var audioCorrect = document.getElementById("myAudioCorrect");
 var audioIncorrect = document.getElementById("myAudioIncorrect");
 var timerEl = document.getElementById('time');
+var timerDisplay = document.querySelector('.timer');
 var timer;
 var timeLeft = 60;
 
@@ -42,7 +47,11 @@ function nextquestion(event){
     if (questionCounter == questions.length){
         questionEl.style.display = "none";
         endScreen.style.display = "block";
+        if (timeLeft >= 0){
         score.textContent = timeLeft;
+    } else {
+        score.textContent = "0";
+    }
         clearInterval(timer);
         return;
     };
@@ -69,10 +78,40 @@ function timerFunction (){
     }, 1000);
 };
 
+submitButton.addEventListener('click', function(value){
+var highscoreDisplay;
+if (timeLeft >= 0) {
+    highscoreDisplay = timeLeft;
+} else if (timeLeft < 0){
+    highscoreDisplay = '0';
+};
+if (highscoreDisplay > localStorage.getItem('score')){
+localStorage.setItem("inituals", initualsStore.value);
+localStorage.setItem("score", highscoreDisplay);
+}
+questionEl.style.display = "none";
+startScreen.style.display = "none";
+endScreen.style.display = "none";
+highscoreScreen.style.display = "block";
+timerEl.style.display = "none";
+timerDisplay.style.display = "none";
+clearInterval();
+document.getElementById("initial-display").innerHTML = localStorage.getItem("inituals");
+document.getElementById("highscore-display").innerHTML = localStorage.getItem('score');
+});
 
 
-
-
+highscoreBtn.addEventListener('click', function(){
+    questionEl.style.display = "none";
+    startScreen.style.display = "none";
+    endScreen.style.display = "none";
+    highscoreScreen.style.display = "block";
+    timerEl.style.display = "none";
+    timerDisplay.style.display = "none";
+    clearInterval();
+document.getElementById("initial-display").innerHTML = localStorage.getItem("inituals");
+document.getElementById("highscore-display").innerHTML = localStorage.getItem('score');
+});
 
 // prompt question
 // Have multiple choise questoins

@@ -32,5 +32,17 @@ var questions = [
       choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
       answer: 'console.log',
     },
+    {
+      title:
+      'What is the best coding language',
+      choices: ['JavaScript', 'css', 'html', 'python'],
+      answer: 'JavaScript',
+    },
+    {
+      title:
+      'What is the worst coding language',
+      choices: ['JavaScript', 'css', 'html', 'python'],
+      answer: 'css',
+    },
   ];
   

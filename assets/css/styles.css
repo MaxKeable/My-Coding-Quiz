@@ -54,6 +54,25 @@ input[type="text"] {
   background-color: #4F8A8B;
 }
 
+.highscoreStyle {
+  margin: 5% 20%;
+}
+
+.highscoreStyle p {
+  background-color: #4F8A8B;
+  padding: 20px;
+  text-align: center;
+  margin: 0 20%;
+  border-radius: 20px;
+  color:#F4F6FF;
+}
+
+.highscoreStyle h3 {
+  background-color: #FBD46D;
+  color:#4F8A8B;
+  padding: 20px;
+  margin-top: 40px;
+}
 
 ol {
   padding-left: 0px;
